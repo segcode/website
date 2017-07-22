@@ -1,0 +1,171 @@
+/*
+Adapted from https://codepen.io/ScottMarshall/pen/JoGWEX
+*/
+
+body {
+  background: #192226 !important;
+}
+
+.navbar-inverse {
+  background: rgba(34,43,49,0.4);
+  border-bottom: 3px solid transparent;
+  padding-top:60px;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  color:black !important;
+}
+
+.navbar-nav {
+  background: transparent;
+  color:black !important;
+}
+
+.navbar-nav li a {
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+
+.navbar-brand {
+
+  color: #FFF !important;
+}
+
+.navbar-brand img {
+  margin-top:-58px;
+}
+
+.nav {
+  margin-bottom: 0px;
+}
+.nav a {
+  letter-spacing: 2px;
+  padding: 16px !important;
+  color: #eee !important;
+
+  position: relative;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+.nav a:hover {
+  background-color: #009BCF !important;
+}
+.nav li {
+  position: relative;
+}
+
+.navbar-inverse .navbar-toggle {
+  border: none;
+}
+
+.navbar-collapse {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:active {
+  background: transparent !important;
+}
+
+.icon-bar {
+  background: #a3bfc6 !important;
+}
+
+.hover {
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #EE445F !important;
+  z-index: 0;
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+  .nav a {
+    padding: 12px !important;
+  }
+}
+@media (max-width: 480px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+}
+
+
+
+/*
+Anchors
+*/
+
+#about {
+  position: absolute;
+  margin-top: -150px;
+}
+
+#goal {
+  position: absolute;
+  margin-top: -100px;
+}
+
+#projects {
+  position: absolute;
+  margin-top: -100px;
+}
+
+#sponsors {
+  position: absolute;
+  margin-top: -100px;
+}
+
+#contact {
+  position: absolute;
+  margin-top: -130px;
+}
+
+/*
+Projects Navigation
+*/
+
+.subnav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.subnav > li {
+    display: inline-block;
+    float:none;
+}
+
+.subnav-toggle {
+  float: none;
+  text-align: center;
+  margin-left:10px;
+}
+
+.subnav a:hover {
+  background-color: transparent !important;
+  color: #009BCF !important;
+  cursor: pointer;
+}

@@ -1,0 +1,162 @@
+/*
+Created by Jack Leslie
+GitHub @jackjdl
+
+Usage:
+
+<span class="A B X Y"></span>
+
+A: orientation (horizontal, vertical)
+B: thickness (thick, normal, thin)
+X: horizontal position (left, right, centre)
+Y: vertical position (upper, lower)
+*/
+
+
+
+/*********
+Horizontal
+*********/
+
+
+
+.horizontal {
+  display: block;
+  background-color: #525252;
+  margin-bottom: 20px;
+
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  
+}
+
+/*
+Thickness
+*/
+
+.super-thick {
+  height: 15px;
+}
+
+.thick {
+  height: 10px;
+}
+
+.normal {
+  height: 5px;
+}
+
+.thin {
+  height: 3px;
+}
+
+.super-thin {
+  height: 2px;
+}
+
+.ultra-thin {
+  height: 1px;
+}
+
+/*
+Left
+*/
+
+.left-long {
+  width: 80%;
+}
+
+.left-mid {
+  width: 50%;
+}
+
+.left-short {
+  width: 30%;
+}
+
+/*
+Right
+*/
+
+.right-long {
+  width: 80%;
+  margin-left: 20%;
+}
+
+.right-mid {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.right-short {
+  width: 30%;
+  margin-left: 70%;
+}
+
+/*
+Centre
+*/
+
+.centre-long {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.centre-mid {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.centre-short {
+  width: 30%;
+  margin-left: 35%;
+}
+
+/*
+Padding
+*/
+
+.upper-short {
+  margin-top: 15px;
+}
+
+.upper-mid {
+  margin-top: 20px;
+}
+
+.upper-long {
+  margin-top: 25px;
+}
+
+.lower-short {
+  margin-top: -15px;
+}
+
+.lower-mid {
+  margin-top: -20px;
+}
+
+.lower-long {
+  margin-top: -25px;
+}
+
+
+
+/*******
+Vertical
+*******/
+
+
+
+.line-bar-vertical-thin {
+  display: block;
+  width: 30px;
+  height:2px;
+  background-color: #009BCF;
+  margin-bottom:-2px;
+  margin-top:15px;
+  margin-right: 5px;
+  transform: rotate(90deg);
+}
