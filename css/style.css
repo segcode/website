@@ -1,0 +1,236 @@
+body, html {
+  color: #222;
+}
+
+/*
+Home Welcome
+*/
+.jumbotron {
+  background-size: cover !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#v0 {
+  width: 100%;
+}
+
+.rockettron {
+  background-image: url("../images/top_banner.jpg");
+  display: none;
+}
+
+.bottomtron {
+  background-image: url("../images/bottom_banner.jpg");
+  height: 600px;
+}
+
+.projecttron {
+  background-image: url("../images/project_fiasco.jpg");
+  height: 600px;
+}
+
+.sponsortron {
+  background-image: url("../images/sponsorsback_trans_grey.png");
+  padding-top:40px;
+  height: 600px;
+}
+
+.jumbotron img {
+  position: relative;
+}
+
+/*
+Typography
+*/
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 150px;
+}
+
+h3, p, a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+}
+
+form, form .btn-success {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 200;
+  font-size: 26px;
+
+}
+
+nav a {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+}
+
+h2, h3 {
+  color: #222;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color:#222;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.container p {
+  color: #222;
+  font-size: 16px;
+}
+
+/*
+Block Styles
+*/
+.col-sm-4, .col-sm-2, .col-sm-12 {
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 30px;
+}
+
+.col-sm-12 h4 {
+  font-size: 20px !important;
+}
+
+.spacer {
+    margin-top: 100px;
+}
+
+.half-spacer {
+    margin-top: 50px;
+}
+
+.quote {
+  border-top: solid 5px #525252;
+  border-bottom: solid 5px #525252;
+  padding:30px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.quote:hover {
+  border-top: solid 5px #009BCF;
+  border-bottom: solid 5px #009BCF;
+}
+
+/*
+Block Animations
+*/
+.col-sm-4 i {
+  transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+/* Line Bar Colour on hover */
+.col-sm-2:hover .horizontal, .col-sm-4:hover .horizontal, .col-sm-12:hover .horizontal  {
+  background-color: #009BCF;
+}
+
+/* Users only scales */
+.col-sm-4:hover .fa-users {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+/* Rocket only rotates */
+.col-sm-4:hover .fa-rocket {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+/* Search scales and rotates */
+.col-sm-4:hover .fa-search {
+  transform: scale(1.2) rotate(20deg);
+  -webkit-transform: scale(1.2) rotate(20deg);
+  -moz-transform: scale(1.2) rotate(20deg);
+  -o-transform: scale(1.2) rotate(20deg);
+}
+
+/*
+Footer
+*/
+
+#bottom {
+  margin-bottom:80px;
+}
+
+.panel-footer {
+  max-height: 120px;
+  height: 120px;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+  border-top: solid 3px #009BCF;
+  color: #222;
+  padding:20px;
+}
+
+.panel-footer ul {
+    margin: 0;
+    padding: 5px;
+}
+
+.panel-footer ul li {
+    margin: 12px;
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.panel-footer ul li img {
+  margin-top: -15px;
+  margin-left: -5px;
+}
+
+#separator {
+  margin-right:0;
+}
+
+.panel-footer ul li i {
+  color:#222;
+}
+
+/*
+Admin
+*/
+
+.admin {
+  color: #525252;
+  font-size: 17px;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+
+.admin:hover {
+  color: #009BCF;
+}
