@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta -->
+    <title>St Andrews Engineering Group</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="St Andrews Engineering Group (SEG) is a society located in the University of St Andrews, dedicated to allowing students to develop engineering skills as they enter STEM fields.">
+    <meta name="author" content="St Andrews Engineering Group">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/linebar.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Reem+Kufi|Source+Sans+Pro:200,300,400|Cormorant+Garamond:300,300i">
+
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/subnav.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Loader -->
+    <div class="loader">
+      <div class="animation">
+        <img id="text" src="images/text.png" width="200px"/>
+        <img id="gear" src="images/gear.png" width="75px"/>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle main-toggle" data-toggle="collapse" data-target="#mainNav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="images/logo_trans_black.png" width="200px"/>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+            <li><a id="aboutLink" href="#about">About</a><span class="hover"></span></li>
+            <li><a id="goalLink" href="#goal">Our Goal</a><span class="hover"></span></li>
+            <li><a id="projectsLink" href="#projects">Projects</a><span class="hover"></span></li>
+            <li><a id="sponsorsLink" href="#sponsors">Sponsors</a><span class="hover"></span></li>
+            <li><a id="contactLink" href="#contact">Contact</a><span class="hover"></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div id="set-height"></div>
+    <div id="time"></div>
+    <div id="scroll"></div>
+    <video id="v0" tabindex="0" autobuffer="autobuffer" preload="auto" autoplay="autoplay" poster="assets/Poster.jpg">
+      <source type="video/mp4" src="assets/Rocket.mp4"></source>
+      <source type="video/webm" src="assets/Rocket.webm"></source>
+    </video>
+    <div id="set-height2"></div>
+
+    <div class="jumbotron rockettron"></div>
+
+    <script>
+
+      if ($(window).width() > 500) {
+        // select video element
+        var vid = document.getElementById('v0');
+        var windowheight = $(window).height()-20;
+
+
+        var scrollpos = window.pageYOffset/150;
+        var targetscrollpos = scrollpos;
+        var accel = 0;
+
+
+        // ---- Values you can tweak: ----
+        var accelamount = 0.01; //How fast the video will try to catch up with the target position. 1 = instantaneous, 0 = do nothing.
+        var bounceamount = 0.01; //value from 0 to 1 for how much backlash back and forth you want in the easing. 0 = no bounce whatsoever, 1 = lots and lots of bounce
+
+        // pause video on load
+        vid.pause();
+
+        window.onscroll = function(){
+            //Set the video position that we want to end up at:
+            targetscrollpos = window.pageYOffset / 300;
+        };
+
+
+        setInterval(function(){
+
+              //Accelerate towards the target:
+              accel += (targetscrollpos - scrollpos)*accelamount;
+
+              //clamp the acceleration so that it doesnt go too fast
+              if (accel > 1) accel = 1;
+              if (accel < -1) accel = -1;
+
+              //move the video scroll position according to the acceleration and how much bouncing you selected:
+              scrollpos = (scrollpos + accel) * (bounceamount) + (targetscrollpos * (1-bounceamount));
+
+              //update video playback
+              vid.currentTime = scrollpos;
+              vid.pause();
+
+        }, 90);
+
+      }
+
+    </script>
+
+    <div class="row spacer"></div>
+
+    <!-- Home Container -->
+    <div class="container">
+
+      <span id="about"></span>
+
+      <!-- What is SEG -->
+      <div class="row">
+        <div class="col-sm-12">
+          <span class="horizontal super-thin centre-long upper-short"></span>
+          <h1>About</h1>
+          <span class="horizontal super-thin centre-long upper-short"></span>
+        </div>
+        <div class="col-sm-12" style="margin-top: 40px;">
+          <img src="images/quote_start.png" width="30px"/>
+          <h5><i>SEG is a society located in the University of St Andrews, dedicated to
+            allowing students to develop engineering skills as they enter STEM fields</i></h5>
+        </div>
+        <div class="col-sm-12" style="margin-top:40px;">
+          <img src="images/committee.jpg" style="max-width: 100%; height:auto;"/>
+        </div>
+
+      </div>
+
+
+      <!-- Icons -->
+      <div class="row" style="margin-top: 40px;">
+        <div class="col-sm-4">
+          <i class="fa fa-users fa-3x"></i>
+          <span class="horizontal ultra-thin centre-short upper-long"></span>
+          <p>We are first and foremost a society, so we organise regular
+            social gatherings and meetings, welcoming students of all backgrounds</p>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-rocket fa-3x"></i>
+          <span class="horizontal ultra-thin centre-short upper-long"></span>
+          <p>Every year we undertake a society-wide engineering project requiring
+            the vast skillset and knowledge of all our members to complete</p>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-search fa-3x"></i>
+          <span class="horizontal ultra-thin centre-short upper-long"></span>
+          <p>Throughout each year we run workshops to teach and discuss various
+            engineering topics, from electionics to computer science</p>
+        </div>
+      </div>
+
+      <div class="row half-spacer"></div>
+
+    </div>
+
+
+      <!-- Goals page anchor -->
+      <span id="goal"></span>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron bottomtron">
+        <div class="container">
+          <div class="col-sm-12">
+            <img src="images/goal_trans_black_light.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+          </div>
+
+          <div class="col-sm-12">
+            <img src="images/quote_start.png" width="30px"/>
+            <h5><i>We want to utilize our scientific and technical knowledge in an engineering environment
+              to allow us to learn, build and teach various aspects of engineering</i></h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="bottom">
+
+        <div class="row half-spacer"></div>
+
+        <!-- Goals Header -->
+        <div class="row">
+          <div class="col-sm-12">
+            <span class="horizontal super-thin centre-long upper-short"></span>
+            <h1>Seg Manifesto</h1>
+            <span class="horizontal super-thin centre-long upper-short"></span>
+          </div>
+          <div class="col-sm-12" style="margin-top: 40px;">
+            <img src="images/quote_start.png" width="30px"/>
+            <h5><i>As a society we have committed to carry out the following pledges</i></h5>
+          </div>
+        </div>
+
+
+        <!-- Goals -->
+        <div class="row" style="margin-top: 40px;">
+          <div class="col-sm-2">
+            <i class="fa fa-lightbulb-o fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Provide students with technical knowledge to work in an engineering field</p>
+          </div>
+          <div class="col-sm-2">
+            <i class="fa fa-university fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Strengthen relations between our university and other programs/universities</p>
+          </div>
+          <div class="col-sm-2">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Reach out and work with the local community in St Andrews</p>
+          </div>
+          <div class="col-sm-2">
+            <i class="fa fa-id-card fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Bring together students and staff from multiple years and disciplines</p>
+          </div>
+          <div class="col-sm-2">
+            <i class="fa fa-calendar fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Engage students in more extracurricular activities</p>
+          </div>
+          <div class="col-sm-2">
+            <i class="fa fa-graduation-cap fa-2x"></i>
+            <span class="horizontal ultra-thin centre-short upper-long"></span>
+            <p>Continue after all current members have graduates</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Projects page anchor -->
+      <span id="projects"></span>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron projecttron text-center">
+        <div class="container">
+          <div class="col-sm-12">
+            <img src="images/projects_trans_black.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+          </div>
+
+          <div class="col-sm-12">
+            <img src="images/quote_start.png" width="30px"/>
+            <h5><i id="project_info">F.I.A.S.C.O was our society weather balloon project for 2016/17, aiming to monitor and
+            capture images of the stratosphere</i></h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <!-- Projects Nav -->
+
+        <div class="navbar-header" style="text-align:center;">
+          <button type="button" class="navbar-toggle subnav-toggle" data-toggle="collapse" data-target="#subNav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="subNav">
+          <ul class="nav navbar-nav subnav">
+            <li><a id="fiascoLink" style="text-decoration: underline;">F.I.A.S.C.O</a><span class="hover"></span></li>
+            <li><a id="carLink">SEG Car</a><span class="hover"></span></li>
+          </ul>
+        </div>
+
+        <span class="row half-spacer"></span>
+
+        <!-- F.I.A.S.C.O Timeline -->
+        <ul class="timeline fiasco">
+          <li>
+            <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;26th September 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;14th November 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-badge"><i class="fa fa-microchip" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;19th December 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;24th February 2017</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-badge"><i class="fa fa-code" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;12th March 2017</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;3rd April 2017</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- SEG Car Timeline -->
+        <ul class="timeline car">
+          <li>
+            <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;4th November 2015</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;14th December 2015</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-badge"><i class="fa fa-microchip" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;25th January 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;2nd February 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-badge"><i class="fa fa-code" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;3rd March 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;26th March 2016</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sponsors page anchor -->
+      <span id="sponsors"></span>
+
+      <div class="jumbotron sponsortron">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <img src="images/sponsors_trans_black.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+            </div>
+          </div>
+
+          <span class="row half-spacer"></span>
+          <span class="row half-spacer"></span>
+
+          <div class="row">
+
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-2">
+              <img src="images/uni_logo_trans.png" width="150px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+            </div>
+            <div class="col-sm-2">
+              <img src="images/union_logo_trans.png" width="150px" class="img-fluid" style="max-width: 100%;height:auto;margin-top:40px;"/>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <span class="row half-spacer"></span>
+      <span class="row half-spacer"></span>
+
+      <!-- Contact page anchor -->
+      <span id="contact"></span>
+
+      <div class="container">
+
+        <!-- Contact Header -->
+        <div class="row">
+          <div class="col-sm-12">
+            <span class="horizontal super-thin centre-long upper-short"></span>
+            <h1>Contact</h1>
+            <span class="horizontal super-thin centre-long upper-short"></span>
+          </div>
+          <div class="col-sm-12" style="margin-top: 40px;">
+            <img src="images/quote_start.png" width="30px"/>
+            <h5><i>If you wish to know more about us, want to get involved in our work, or are interested in a sponsorship,
+              please use the contact form below and we will get in touch as soon as possible.</i></h5>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+
+        <form id="contact-form" method="post" action="mailto:saintsengineeringgroup@gmail.com" role="form" style="margin-top: 40px;">
+          <div class="controls">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label for="form_name">Name *</label>
+                          <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your full name *" required="required" data-error="Firstname is required.">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label for="form_email">Email *</label>
+                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label for="form_phone">Phone</label>
+                          <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone number">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label for="form_message">Message *</label>
+                          <textarea id="form_message" name="message" class="form-control" placeholder="Please enter your message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12">
+                      <input type="submit" class="btn" value="Send message">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                    <br>
+                      <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                  </div>
+              </div>
+          </div>
+        </form>
+
+        <div class="row half-spacer"></div>
+      </div>
+
+
+
+      <!-- Footer -->
+      <div class="panel-footer">
+        <ul>
+          <li><a href="https://www.facebook.com/StAndrewsEngineering/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+          <li id="separator"><span class="line-bar-vertical-thin"></span></li>
+          <li><a href="https://www.st-andrews.ac.uk/" target="_blank"><img src="images/st_andrews.png" width="50px" class="img-fluid" style="max-width: 100%;height:auto;"/></a></li>
+        </ul>
+        <ul>
+          <li><a href="#" class="admin">Login</a></li>
+          <li><a href="assets/constitution.pdf" class="admin" target="_blank">Constitution</a></li>
+        </ul>
+      </div>
+
+  </body>
+</html>

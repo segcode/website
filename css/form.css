@@ -1,0 +1,32 @@
+form .col-sm-12 {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: transparent !important;
+  border: solid 1px #525252;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  color:#222;
+  transition: border 0.2s ease;
+  -webkit-transition: border 0.2s ease;
+  -moz-transition: border 0.2s ease;
+  -o-transition: border 0.2s ease;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  border: solid 1px #009BCF;
+  color:#222;
+}
