@@ -7,12 +7,12 @@ $(document).scroll(function() {
     var div_five_top = $('#sponsors').position().top - 160;
     var div_six_top = $('#contact').position().top - 200;
 
-
     if (scroll_top > ($(window).height() - 100) && scroll_top < div_one_top) {
       //Home
       $('#aboutLink').css("background-color","transparent");
       $('#goalLink').css("background-color","transparent");
       $('#manifestoLink').css("background-color","transparent");
+
       $('#projectsLink').css("background-color","transparent");
       $('#sponsorsLink').css("background-color","transparent");
       $('#contactLink').css("background-color","transparent");
@@ -25,6 +25,7 @@ $(document).scroll(function() {
         $('#aboutLink').css("background-color","#009BCF");
         $('#goalLink').css("background-color","transparent");
         $('#manifestoLink').css("background-color","transparent");
+
         $('#projectsLink').css("background-color","transparent");
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
@@ -37,6 +38,7 @@ $(document).scroll(function() {
         $('#aboutLink').css("background-color","transparent");
         $('#goalLink').css("background-color","#009BCF");
         $('#manifestoLink').css("background-color","transparent");
+
         $('#projectsLink').css("background-color","transparent");
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
