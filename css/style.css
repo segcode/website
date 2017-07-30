@@ -249,3 +249,14 @@ Admin
 .admin:hover {
   color: #009BCF;
 }
+
+/*
+Other
+ */
+
+.fa-spin-hover:hover {
+    -webkit-animation: fa-spin 2s infinite linear;
+    -moz-animation: fa-spin 2s infinite linear;
+    -o-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
