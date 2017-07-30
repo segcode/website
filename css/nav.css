@@ -127,6 +127,11 @@ Anchors
   margin-top: -100px;
 }
 
+#manifesto {
+  position: absolute;
+  margin-top: -150px;
+}
+
 #projects {
   position: absolute;
   margin-top: -100px;

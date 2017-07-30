@@ -132,10 +132,17 @@ Block Styles
   border-bottom: solid 5px #009BCF;
 }
 
+.sub {
+  max-width: 1000px;
+  float:none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*
 Block Animations
 */
-.col-sm-4 i {
+.col-sm-4 i, .col-sm-2 i {
   transform: scale(1) rotate(0deg);
   -webkit-transform: scale(1) rotate(0deg);
   -moz-transform: scale(1) rotate(0deg);
@@ -174,6 +181,14 @@ Block Animations
   -webkit-transform: scale(1.2) rotate(20deg);
   -moz-transform: scale(1.2) rotate(20deg);
   -o-transform: scale(1.2) rotate(20deg);
+}
+
+/* Others only scale */
+.col-sm-2:hover .fa-2x {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
 }
 
 /*
