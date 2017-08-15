@@ -26,7 +26,8 @@ $(document).ready(function() {
     //gives appearance of image and text fading
     setTimeout(function() {
       $('.projecttron').css('background-image', 'url("images/project_fiasco.jpg")');
-      $('#project_info').text('F.I.A.S.C.O was our society weather balloon project for 2016/17, aiming to monitor and capture images of the stratosphere');
+      $('#project_info').text('During the year 2016/17, we have decided to build a weather balloon that could perform measurements, take pictures of the stratosphere and ' +
+          'communicate the acquired information back to the ground station.');
     }, 200);
 
 

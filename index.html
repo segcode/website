@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+`   <html lang="en">
   <head>
 
     <!-- Meta -->
@@ -36,358 +36,365 @@
     <div class="loader">
       <div class="animation">
         <img id="text" src="images/text.png" width="200px"/>
-        <img id="gear" src="images/gear.png" width="75px"/>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle main-toggle" data-toggle="collapse" data-target="#mainNav">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <img src="images/logo_trans_black.png" width="200px"/>
-          </a>
+            <img id="gear" src="images/gear.png" width="75px"/>
+          </div>
         </div>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="nav navbar-nav">
-            <li><a id="aboutLink" href="#about">About</a><span class="hover"></span></li>
-            <li><a id="goalLink" href="#goal">Our Goal</a><span class="hover"></span></li>
-            
-            <li><a id="manifestoLink" href="#manifesto">Manifesto</a><span class="hover"></span></li>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle main-toggle" data-toggle="collapse" data-target="#mainNav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <img src="images/logo_trans_black.png" width="200px"/>
+              </a>
+            </div>
 
-            <li><a id="projectsLink" href="#projects">Projects</a><span class="hover"></span></li>
-            <li><a id="sponsorsLink" href="#sponsors">Sponsors</a><span class="hover"></span></li>
-            <li><a id="contactLink" href="#contact">Contact</a><span class="hover"></span></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="nav navbar-nav">
+                <li><a id="aboutLink" href="#about">About</a><span class="hover"></span></li>
+                <li><a id="goalLink" href="#goal">Our Goal</a><span class="hover"></span></li>
 
+                <li><a id="manifestoLink" href="#manifesto">Manifesto</a><span class="hover"></span></li>
 
-
-    <!--- Video Handling --->
-    <div id="set-height"></div>
-    <div id="time"></div>
-    <div id="scroll"></div>
-    <video id="v0" tabindex="0" autobuffer="autobuffer" preload="auto" autoplay="autoplay" poster="assets/Poster.jpg">
-      <source type="video/mp4" src="assets/Rocket.mp4"></source>
-      <source type="video/webm" src="assets/Rocket.webm"></source>
-    </video>
-    <div id="set-height2"></div>
-
-    <div class="jumbotron rockettron"></div>
-
-    <script>
-
-      if ($(window).width() > 500) {
-        // select video element
-        var vid = document.getElementById('v0');
-        var windowheight = $(window).height()-20;
+                <li><a id="projectsLink" href="#projects">Projects</a><span class="hover"></span></li>
+                <li><a id="eventsLink" href="#projects">Events</a><span class="hover"></span></li>
+                <li><a id="sponsorsLink" href="#sponsors">Sponsors</a><span class="hover"></span></li>
+                <li><a id="contactLink" href="#contact">Contact</a><span class="hover"></span></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
 
-        var scrollpos = window.pageYOffset/150;
-        var targetscrollpos = scrollpos;
-        var accel = 0;
+
+        <!--- Video Handling --->
+        <div id="set-height"></div>
+        <div id="time"></div>
+        <div id="scroll"></div>
+        <video id="v0" tabindex="0" autobuffer="autobuffer" preload="auto" autoplay="autoplay" poster="assets/Poster.jpg">
+          <source type="video/mp4" src="assets/Rocket.mp4"></source>
+          <source type="video/webm" src="assets/Rocket.webm"></source>
+        </video>
+        <div id="set-height2"></div>
+
+        <div class="jumbotron rockettron"></div>
+
+        <script>
+
+          if ($(window).width() > 500) {
+            // select video element
+            var vid = document.getElementById('v0');
+            var windowheight = $(window).height()-20;
 
 
-        // ---- Values you can tweak: ----
-        var accelamount = 0.01; //How fast the video will try to catch up with the target position. 1 = instantaneous, 0 = do nothing.
-        var bounceamount = 0.01; //value from 0 to 1 for how much backlash back and forth you want in the easing. 0 = no bounce whatsoever, 1 = lots and lots of bounce
-
-        // pause video on load
-        vid.pause();
-
-        window.onscroll = function(){
-            //Set the video position that we want to end up at:
-            targetscrollpos = window.pageYOffset / 300;
-        };
+            var scrollpos = window.pageYOffset/150;
+            var targetscrollpos = scrollpos;
+            var accel = 0;
 
 
-        setInterval(function(){
+            // ---- Values you can tweak: ----
+            var accelamount = 0.01; //How fast the video will try to catch up with the target position. 1 = instantaneous, 0 = do nothing.
+            var bounceamount = 0.01; //value from 0 to 1 for how much backlash back and forth you want in the easing. 0 = no bounce whatsoever, 1 = lots and lots of bounce
 
-              //Accelerate towards the target:
-              accel += (targetscrollpos - scrollpos)*accelamount;
+            // pause video on load
+            vid.pause();
 
-              //clamp the acceleration so that it doesnt go too fast
-              if (accel > 1) accel = 1;
-              if (accel < -1) accel = -1;
-
-              //move the video scroll position according to the acceleration and how much bouncing you selected:
-              scrollpos = (scrollpos + accel) * (bounceamount) + (targetscrollpos * (1-bounceamount));
-
-              //update video playback
-              vid.currentTime = scrollpos;
-              vid.pause();
-
-        }, 90);
-
-      }
-
-    </script>
-
-    <div class="row spacer"></div>
-
-    <!-- Home Container -->
-    <div class="container">
-
-      <span id="about"></span>
-
-      <!-- What is SEG -->
-      <div class="row">
-        <div class="col-sm-12">
+            window.onscroll = function(){
+                //Set the video position that we want to end up at:
+                targetscrollpos = window.pageYOffset / 300;
+            };
 
 
-          <h1>About</h1>
-          <span class="horizontal super-thin centre-short upper-short"></span>
-          <h5 class="sub">St Andrews Engineering Group (SEG) is a student-run society located in the University of St Andrews,
-                dedicated to allowing students to develop various engineering skills. </h5>
-        </div>
-      </div>
+            setInterval(function(){
 
+                  //Accelerate towards the target:
+                  accel += (targetscrollpos - scrollpos)*accelamount;
 
-      <!-- Icons -->
-      <div class="row" style="margin-top: 40px;">
-        <div class="col-sm-4">
-          <i class="fa fa-users fa-3x"></i>
-          <span class="horizontal ultra-thin centre-short upper-long"></span>
+                  //clamp the acceleration so that it doesnt go too fast
+                  if (accel > 1) accel = 1;
+                  if (accel < -1) accel = -1;
 
-          <p>People from all kind of backgrounds are welcome to join us.
-             We expect no prior engineering knowledge and are keen to teach all the necessary skills.</p>
-       
-        </div>
-        <div class="col-sm-4">
-          <i class="fa fa-rocket fa-3x"></i>
-          <span class="horizontal ultra-thin centre-short upper-long"></span>
-          <p>Every year we undertake a society-wide engineering project requiring
+                  //move the video scroll position according to the acceleration and how much bouncing you selected:
+                  scrollpos = (scrollpos + accel) * (bounceamount) + (targetscrollpos * (1-bounceamount));
 
-            the vast skillset and knowledge of all our members to complete.</p>
-        </div>
-        <div class="col-sm-4">
-          <i class="fa fa-cog fa-3x fa-spin-hover"></i>
-          <span class="horizontal ultra-thin centre-short upper-long"></span>
-          <p>Throughout each year we run workshops to teach and discuss various
-            engineering topics, ranging from Electronics and Mechanics to Computer Science.</p>
+                  //update video playback
+                  vid.currentTime = scrollpos;
+                  vid.pause();
 
-        </div>
-      </div>
+            }, 90);
 
-      <div class="row half-spacer"></div>
+          }
 
-    </div>
+        </script>
 
+        <div class="row spacer"></div>
 
-      <!-- Goals page anchor -->
-      <span id="goal"></span>
-
-      <!-- Jumbotron -->
-      <div class="jumbotron bottomtron">
+        <!-- Home Container -->
         <div class="container">
-          <div class="col-sm-12">
-            <img src="images/goal_trans_black_light.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
-          </div>
 
-          <div class="col-sm-12">
-            <img src="images/quote_start.png" width="30px"/>
-            <h5><i>We seek to promote engineering in St Andrews and provide a medium for students to learn, share ideas, participate in a large-scale technical projects and have fun in the process.</i></h5>
-          </div>
-        </div>
-      </div>
+          <span id="about"></span>
 
-      <div class="container" id="bottom">
-
-        <div class="row half-spacer"></div>
-
-        <!-- Projects page anchor -->
-        <span id="manifesto"></span>
-
-        <!-- Goals Header -->
-        <div class="row">
-          <div class="col-sm-12">
-            <h1>Seg Manifesto</h1>
-            <span class="horizontal super-thin centre-short upper-short"></span>
-            <h5 class="sub">As a society we have committed to carry out the following pledges</h5>
-          </div>
-        </div>
+          <!-- What is SEG -->
+          <div class="row">
+            <div class="col-sm-12">
 
 
-        <!-- Goals -->
-        <div class="row" style="margin-top: 40px;">
-          <div class="col-sm-2">
-            <i class="fa fa-lightbulb-o fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Provide students with technical knowledge required to work on interesting engineering projects</p>
+              <h1>About</h1>
+              <span class="horizontal super-thin centre-short upper-short"></span>
+              <h5 class="sub">St Andrews Engineering Group (SEG) is a student-run society located in the University of St Andrews,
+                    dedicated to allowing students to develop various engineering skills. </h5>
+            </div>
           </div>
-          <div class="col-sm-2">
-            <i class="fa fa-handshake-o fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Strengthen relations between our university and other academic institutions</p>
+
+
+          <!-- Icons -->
+          <div class="row" style="margin-top: 40px;">
+            <div class="col-sm-4">
+              <i class="fa fa-users fa-3x"></i>
+              <span class="horizontal ultra-thin centre-short upper-long"></span>
+
+              <p>People from all kind of backgrounds are welcome to join us.
+                 We expect no prior engineering knowledge and are keen to teach all the necessary skills.</p>
+
+            </div>
+            <div class="col-sm-4">
+              <i class="fa fa-rocket fa-3x"></i>
+              <span class="horizontal ultra-thin centre-short upper-long"></span>
+              <p>Every year we undertake a society-wide engineering project requiring
+
+                the vast skillset and knowledge of all our members to complete.</p>
+            </div>
+            <div class="col-sm-4">
+              <i class="fa fa-cog fa-3x fa-spin-hover"></i>
+              <span class="horizontal ultra-thin centre-short upper-long"></span>
+              <p>Throughout each year we run workshops to teach and discuss various
+                engineering topics, ranging from Electronics and Mechanics to Computer Science.</p>
+
+            </div>
           </div>
-          <div class="col-sm-2">
-            <i class="fa fa-home fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Communicate with the local community of St Andrews and organise public events</p>
-          </div>
-          <div class="col-sm-2">
-            <i class="fa fa-university fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Bring together students and staff from various departments and different disciplines</p>
-          </div>
-          <div class="col-sm-2">
-            <i class="fa fa-calendar fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Engage students in more extracurricular activities: organise design workshops and social events</p>
-          </div>
-          <div class="col-sm-2">
-            <i class="fa fa-graduation-cap fa-2x"></i>
-            <span class="horizontal ultra-thin centre-short upper-long"></span>
-            <p>Reach out to graduates and get them involved by sharing their knowledge and experience</p>
-          </div>
+
+          <div class="row half-spacer"></div>
+
         </div>
 
-      </div>
 
-      <!-- Projects page anchor -->
-      <span id="projects"></span>
+          <!-- Goals page anchor -->
+          <span id="goal"></span>
 
-      <!-- Jumbotron -->
-      <div class="jumbotron projecttron text-center">
-        <div class="container">
-          <div class="col-sm-12">
-            <img src="images/projects_trans_black.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+          <!-- Jumbotron -->
+          <div class="jumbotron bottomtron">
+            <div class="container">
+              <div class="col-sm-12">
+                <img src="images/goal_trans_black_light.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
+              </div>
+
+              <div class="col-sm-12">
+                <img src="images/quote_start.png" width="30px"/>
+                <h5>We seek to promote engineering in St Andrews and provide a medium for students to learn, share ideas, participate in a large-scale technical projects and have fun in the process.</h5>
+              </div>
+            </div>
           </div>
 
-          <div class="col-sm-12">
-            <img src="images/quote_start.png" width="30px"/>
-            <h5><i id="project_info">F.I.A.S.C.O was our society weather balloon project for 2016/17, aiming to monitor and
-            capture images of the stratosphere</i></h5>
+          <div class="container" id="bottom">
+
+            <div class="row half-spacer"></div>
+
+            <!-- Projects page anchor -->
+            <span id="manifesto"></span>
+
+            <!-- Goals Header -->
+            <div class="row">
+              <div class="col-sm-12">
+                <h1>Seg Manifesto</h1>
+                <span class="horizontal super-thin centre-short upper-short"></span>
+                <h5 class="sub">As a society we have committed to carry out the following pledges</h5>
+              </div>
+            </div>
+
+
+            <!-- Goals -->
+            <div class="row" style="margin-top: 40px;">
+              <div class="col-sm-2">
+                <i class="fa fa-lightbulb-o fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Provide students with technical knowledge required to work on interesting engineering projects</p>
+              </div>
+              <div class="col-sm-2">
+                <i class="fa fa-handshake-o fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Strengthen relations between our university and other academic institutions</p>
+              </div>
+              <div class="col-sm-2">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Communicate with the local community of St Andrews and organise public events</p>
+              </div>
+              <div class="col-sm-2">
+                <i class="fa fa-university fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Bring together students and staff from various departments and different disciplines</p>
+              </div>
+              <div class="col-sm-2">
+                <i class="fa fa-calendar fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Engage students in more extracurricular activities: organise design workshops and social events</p>
+              </div>
+              <div class="col-sm-2">
+                <i class="fa fa-graduation-cap fa-2x"></i>
+                <span class="horizontal ultra-thin centre-short upper-long"></span>
+                <p>Reach out to graduates and get them involved by sharing their knowledge and experience</p>
+              </div>
+            </div>
+
           </div>
-        </div>
-      </div>
 
-      <div class="container">
+          <!-- Projects page anchor -->
+          <span id="projects"></span>
 
-        <!-- Projects Nav -->
-
-        <div class="navbar-header" style="text-align:center;">
-          <button type="button" class="navbar-toggle subnav-toggle" data-toggle="collapse" data-target="#subNav">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="subNav">
-          <ul class="nav navbar-nav subnav">
-            <li><a id="fiascoLink" style="text-decoration: underline;">F.I.A.S.C.O</a><span class="hover"></span></li>
-            <li><a id="carLink">SEG Car</a><span class="hover"></span></li>
-          </ul>
-        </div>
-
-        <span class="row half-spacer"></span>
-
-        <!-- F.I.A.S.C.O Timeline -->
-        <ul class="timeline fiasco">
-          <li>
-            <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;26th September 2016</small></p>
+          <!-- Jumbotron -->
+          <div class="jumbotron projecttron text-center">
+            <div class="container">
+              <div class="col-sm-12">
+                <img src="images/projects_trans_black.png" width="400px" class="img-fluid" style="max-width: 100%;height:auto;"/>
               </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+
+              <div class="col-sm-12">
+                <img src="images/quote_start.png" width="30px"/>
+                <h5><b>F.I.A.S.C.O (Futuristic Ingeniously Assembled Space and Cosmos Observer)</b></h5>
+                <h5><i id="project_info">During the year 2016/17, we have decided to build a weather balloon that could perform measurements, take pictures of the stratosphere and
+                  communicate the acquired information back to the ground station.</i></h5>
               </div>
             </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;14th November 2016</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-badge"><i class="fa fa-microchip" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;19th December 2016</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;24th February 2017</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-badge"><i class="fa fa-code" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;12th March 2017</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;3rd April 2017</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+          </div>
 
-        <!-- SEG Car Timeline -->
-        <ul class="timeline car">
-          <li>
-            <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;4th November 2015</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
+          <div class="container">
+
+            <!-- Projects Nav -->
+
+            <div class="navbar-header" style="text-align:center;">
+              <button type="button" class="navbar-toggle subnav-toggle" data-toggle="collapse" data-target="#subNav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="subNav">
+              <ul class="nav navbar-nav subnav">
+                <li><a id="droneLink">Project Drones (2017/18)</a><span class="hover"></span></li>
+                <li><a id="fiasco2Link">F.I.A.S.C.O V0.2 (2017/18)</a><span class="hover"></span></li>
+                <li><a id="fiascoLink" style="text-decoration: underline;">F.I.A.S.C.O V0.1 (2016/17)</a><span class="hover"></span></li>
+                <li><a id="carLink">SEG Car (2015/16)</a><span class="hover"></span></li>
+              </ul>
+            </div>
+
+            <span class="row half-spacer"></span>
+
+            <!-- F.I.A.S.C.O Timeline -->
+            <ul class="timeline fiasco">
+              <li>
+                <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title"><i>We came up with an idea...</i></h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p>During one of your committee meetings, we were discussing ideas for the next year's project and someone brought up a competition called <a href="https://www.balloonchallenge.org/" target="_blank" >Global Space Balloon Challenge</a>.
+                      It involved working as a team and launching a weather balloon into the higher layers of the atmosphere to perform scientific experiments and take stunning pictures. We were captivated by this challenge and
+                      unanimously agreed to pursue it.</p>
+                  </div>
+                </div>
+                <img src="images/fiasco0.1/discussion.jpg" class="img-fluid timeline-picture-right"/>
+
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-badge"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title"><i>Planning stage</i></h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p>In order to increase the chancess of the mission's sucess a lot of planning was done beforehand. First of all, we selected the right hardware for the project: Arduino Uno, cameras, bunch of various sensors and a high frequency transmitter
+                    that would allow us to transmit the telemetry data back to the ground station. Furthermore, after we could estimate the weight of the payload, we were able to decide on an appropriate parachute and a balloon that would lift the targeted payload mass.</p>
+                  </div>
+                </div>
+                <img src="images/fiasco0.1/planning.jpg" class="img-fluid timeline-picture-left"/>
+
+              </li>
+              <li>
+                <div class="timeline-badge"><i class="fa fa-microchip" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title"><i>Assembly</i></h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Throughout the year, we organised bunch of workshops where we assembled the payload and attached it the parachute and the balloon. The hardware was safely secured to the payload and tested by measuring and sending the telemetry data over the radio channel.
+                      Morover, the ground station required some preparations as well. We acquired a powerful transceiver and hooked it up to a Yagi antenna, which allowed us to receive data from the payload with a theoretical range of 40km.
+                    </p>
+                  </div>
+                </div>
+                <img src="images/fiasco0.1/workshop.jpg" class="img-fluid timeline-picture-right"/>
+
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-badge"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">Launch Day</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      After deciding on the launch window, we were monitoring the weather data and using the <a href="http://predict.habhub.org/" target="_blank" >CUSF Landing Predictor</a> to predict where the payload would approximately land on a particular day.
+                      The success of the mission relied heavily on the final location of the payload, as we were planning to retrieve the measurement data and video footage of the flight. In the end, on the 4th of May, after confirming favourable weather conditions and getting permissions from
+                      the Civil Aviation Authority and the local military base, we were ready to launch.
+                    </p>
+                  </div>
+                </div>
+                <img src="images/fiasco0.1/event.jpg" class="img-fluid timeline-picture-left"/>
+
+              </li>
+              <li>
+                <div class="timeline-badge"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">Mission Failure</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Launch day preparations were going fine. <a href="https://www.st-andrews.ac.uk/physics/index.php" target="_blank">School of Physics</a> were kind enough to provide us with helium and, after making sure that the payload is sealed and secure, we started filling the balloon.
+                      About ten minutes later, the balloon was big enough to lift the payload into the stratosphere. We started counting from t-minus ten seconds and the balloon was released.
+                      Initially it all looked good, but then the radar reflector snapped in half and separated the balloon from its payload. The payload fell onto the ground, while the balloon continued its way up.
+                      The mission was a failure, yet we learned a lot from it and decided to try the launch again next year with an improved F.I.A.S.C.O. v0.2.
+                    </p>
+                  </div>
+                </div>
+                <img src="images/fiasco0.1/launch.jpg" class="img-fluid timeline-picture-right"/>
+
+
+              </li>
+            </ul>
+
+            <!-- SEG Car Timeline -->
+            <ul class="timeline car">
+              <li>
+                <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">Nananum ipsum cacilds</h4>
+                      <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;4th November 2015</small></p>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                      Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  </div>
             </div>
           </li>
           <li class="timeline-inverted">
@@ -571,8 +578,8 @@
       <div class="panel-footer">
         <ul>
           <li><a href="https://www.facebook.com/StAndrewsEngineering/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
-          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
-          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+          <li><a href="https://github.com/segcode" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UC6tQy3B8KMkkWTr79SF1ZJQ" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>
           <li id="separator"><span class="line-bar-vertical-thin"></span></li>
           <li><a href="https://www.st-andrews.ac.uk/" target="_blank"><img src="images/st_andrews.png" width="50px" class="img-fluid" style="max-width: 100%;height:auto;"/></a></li>
         </ul>

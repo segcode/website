@@ -132,7 +132,22 @@
 .timeline-title {
   margin-top: 0;
   color: inherit;
+  font-style: italic;
 }
+
+.timeline-picture-right {
+  height: 200px;
+  width: 335px;
+  margin-left: 90px;
+}
+
+.timeline-picture-left {
+  height: 200px;
+  width: 335px;
+  margin-left: 188px;
+}
+
+
 
 .timeline-body > p,
 .timeline-body > ul {
