@@ -29,6 +29,7 @@ Home Welcome
 
 .projecttron {
   background-image: url("../images/project_fiasco.jpg");
+  background-position: center;
   height: 600px;
 }
 
