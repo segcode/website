@@ -77,7 +77,7 @@
         <div id="set-height"></div>
         <div id="time"></div>
         <div id="scroll"></div>
-        <video id="v0" tabindex="0" autobuffer="autobuffer" preload="auto" autoplay="autoplay" poster="assets/Poster.jpg">
+        <video id="v0" tabindex="0" autobuffer="autobuffer" preload="auto" autoplay="autoplay" poster="images/welcome_banner.jpg">
           <source type="video/mp4" src="assets/Rocket.mp4"></source>
           <source type="video/webm" src="assets/Rocket.webm"></source>
         </video>
@@ -266,8 +266,8 @@
 
               <div class="col-sm-12">
                 <img src="images/quote_start.png" width="30px"/>
-                <h5><b>F.I.A.S.C.O (Futuristic Ingeniously Assembled Space and Cosmos Observer)</b></h5>
-                <h5><i id="project_info">During the year 2016/17, we have decided to build a weather balloon that could perform measurements, take pictures of the stratosphere and
+                <h5><b id="projectName">F.I.A.S.C.O (Futuristic Ingeniously Assembled Space and Cosmos Observer</b></h5>
+                <h5><i id="projectInfo">During the year 2016/17, we have decided to build a weather balloon that could perform measurements, take pictures of the stratosphere and
                   communicate the acquired information back to the ground station.</i></h5>
               </div>
             </div>
@@ -383,84 +383,99 @@
             </ul>
 
             <!-- SEG Car Timeline -->
-            <ul class="timeline car">
-              <li>
-                <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                      <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;4th November 2015</small></p>
-                  </div>
-                  <div class="timeline-body">
-                    <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                      Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                  </div>
-            </div>
+        <ul class="timeline car">
+          <li>
+              <div class="timeline-badge"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Our first project</h4>
+                </div>
+                <div class="timeline-body">
+                  <p>
+                    As a brand new society, we decided that our first project is going to be a remotely controlled vehicle that we called - the SEG car. According to the specification we made,
+                    the vehicle was suppose to be able to scan the surroundings, report obstacles to the user and be able to move freely in a given environment. We split our members into three groups:
+                    Mechanics, Electronics and Coding and assigned a person to be in charge for each of those.
+                  </p>
+                </div>
+          </div>
+          <img src="images/segCar/members.jpg" class="img-fluid timeline-picture-right"/>
+
           </li>
           <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-paint-brush" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">Vehicle design competition</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Before any serious work began, we wanted to include as many members as possible in the design process and organised a drawing competition, where members could come up with a version of how the vehicle should
+                look like from an aesthetic point of view. After deliberate consideration and voting process, the winner became a retro looking design made by our member Ondrej Ptacek.</p>
+              </div>
+            </div>
+            <img src="images/segCar/design.jpg" class="img-fluid timeline-picture-left"/>
+
+          </li>
+          <li>
             <div class="timeline-badge"><i class="fa fa-pencil" aria-hidden="true"></i></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;14th December 2015</small></p>
+                <h4 class="timeline-title">Planning stage</h4>
               </div>
               <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                <p>We have spent a lot of time planning and discussing various parts and components of the project. Among the things we had to take into consideration were: size and mass of the car, materials for the frame, type and required power of the motors, capacity of the battery
+                  needed, different environment sensors and a micro-controller to collect and analyse the data. Initially, we planned to use a spining laser called LIDAR, to detect the range and shape of the surrounding objects. However, due to small available budget and lack of time, we decided to use
+                range sensors powered by ultrasound, which turned out to be much cheaper and seemed to be performing well enough for our needs.</p>
               </div>
             </div>
+            <img src="images/segCar/planning.jpg" class="img-fluid timeline-picture-right"/>
+
           </li>
-          <li>
+          <li class="timeline-inverted">
             <div class="timeline-badge"><i class="fa fa-microchip" aria-hidden="true"></i></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;25th January 2016</small></p>
+                <h4 class="timeline-title">First prototype</h4>
               </div>
               <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                <p>To confirm if we have chosen the right hardware for  the project, we built a smaller version of the car, also known as, the prototype. It was powered by an Arduino micro-controller and four motors
+                controlled with h-bridges. The power was supplied using a 9V lithium battery. As the prototype was a success and we were able to control the car, while collecting the data at the same time, a decision was made to proceed
+                with the main project and scale the prototype up.</p>
               </div>
             </div>
+              <img src="images/segCar/prototype.jpg" class="img-fluid timeline-picture-left"/>
+
           </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;2nd February 2016</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
+
           <li>
-            <div class="timeline-badge"><i class="fa fa-code" aria-hidden="true"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;3rd March 2016</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
             <div class="timeline-badge"><i class="fa fa-cogs" aria-hidden="true"></i></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4 class="timeline-title">Nananum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="fa fa-calendar-o"></i>&nbsp;&nbsp;26th March 2016</small></p>
+                <h4 class="timeline-title">Assembly</h4>
               </div>
               <div class="timeline-body">
-                <p>Nananum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                  Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                <p>Finally, we began to work on the actual vehicle. After ordering all the necessary parts, we started the assembly process.
+                  First of all, the main frame was built. Then, we added and secured the motors together with the wheels. Lastly, the electronic components were installed and we were ready to go for a test trial.
+                  Unfortunately, the motors turned out to not be powerful enough to handle the weight of the car directly and a novel approach was required to save the project.</p>
               </div>
             </div>
+            <img src="images/segCar/assembly.png" class="img-fluid timeline-picture-right"/>
+
+          </li>
+
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">The final push</h4>
+              </div>
+              <div class="timeline-body">
+                <p>A decision was made to introduce a gearing system which would reduce the load on the motors. The idea was good and seemed to work well theoretically, yet it was harder to implement then we had anticipated.
+                In the end, we ran out of time and funds to continue the project. On the other hand, we have learned a lot from this project: from how to manage people and work in teams to different technical and financial challanges of engineering projects.
+                We have decided to take this valuable experience with us to the next year's project and share it with our future members.</p>
+              </div>
+            </div>
+            <img src="images/segCar/motor.jpg" class="img-fluid timeline-picture-left"/>
+
           </li>
         </ul>
 
