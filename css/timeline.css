@@ -135,19 +135,24 @@
   font-style: italic;
 }
 
-.timeline-picture-right {
-  height: 200px;
-  width: 335px;
-  margin-left: 90px;
+.timeline-picture {
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.timeline-picture img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
 }
 
 .timeline-picture-left {
-  height: 200px;
-  width: 335px;
-  margin-left: 188px;
+  margin-left: 120px;
 }
 
-
+.timeline-picture-right {
+  margin-left: 180px;
+}
 
 .timeline-body > p,
 .timeline-body > ul {

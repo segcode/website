@@ -19,7 +19,7 @@ body {
 
 .navbar-nav {
   background: transparent;
-  color:#222 !important;
+  color:#222;
 }
 
 .navbar-nav li a {
@@ -173,4 +173,10 @@ Projects Navigation
   background-color: transparent !important;
   color: #009BCF !important;
   cursor: pointer;
+}
+
+.navbar-nav .futureProject {
+  color: #AAA !important;
+  pointer-events: none;
+  cursor: default
 }
