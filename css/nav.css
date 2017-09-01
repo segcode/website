@@ -6,8 +6,34 @@ body {
   background: #eaeaea !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.emblem {
+  position: absolute;
+  margin-left: 50px;
+  margin-top:50px;
+  padding-right: 100px;
+}
+
+.indicator {
+  position: absolute;
+  margin: auto;
+  left:0;bottom:30px;right:0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+
+.indicator:hover {
+}
+
 .navbar-inverse {
   background: rgba(238,238,238,0.8);
+  opacity: 0;
   border-bottom: 3px solid transparent;
   padding-top:60px;
   transition: all 0.2s ease;

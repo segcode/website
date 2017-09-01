@@ -17,6 +17,7 @@ $(document).scroll(function() {
       $('#sponsorsLink').css("background-color","transparent");
       $('#contactLink').css("background-color","transparent");
 
+      $('.navbar-inverse').css("opacity","0");
       $('.navbar-inverse').css("background-color","rgba(238,238,238,0.8)");
       $('.navbar-inverse').css("border-bottom-color","transparent");
 
@@ -30,6 +31,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -43,6 +45,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -55,6 +58,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -67,6 +71,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -79,6 +84,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","#009BCF");
         $('#contactLink').css("background-color","transparent");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -91,6 +97,7 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","#009BCF");
 
+        $('.navbar-inverse').css("opacity","1");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
@@ -102,8 +109,11 @@ $(document).scroll(function() {
         $('#sponsorsLink').css("background-color","transparent");
         $('#contactLink').css("background-color","transparent");
 
-        $('.navbar-inverse').css("background-color","rgba(238,238,238,0.8)");
+        $('.navbar-inverse').css("opacity","0");
         $('.navbar-inverse').css("border-bottom-color","transparent");
+        
+        //fade scroll indicator once scrolled
+        $('.indicator').css("opacity","0");
     }
 
 });
