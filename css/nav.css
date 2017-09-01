@@ -41,6 +41,7 @@ body {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   color:#222 !important;
+  pointer-events: none;
 }
 
 .navbar-nav {
