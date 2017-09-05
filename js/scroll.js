@@ -139,5 +139,10 @@ $(document).ready(function() {
 });
 
 $(window).ready(function() {
-  $('.loader').delay(800).fadeOut("slow");
+
+  var video = document.getElementById('v0');
+  video.addEventListener('loadeddata', function() {
+     $('.loader').delay(800).fadeOut("slow");
+  }, false);
+
 });
