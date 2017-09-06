@@ -10,8 +10,9 @@
   left:0;
   opacity: 1;
   background-color:#dedede;
-  z-index: 1000;
+  z-index: 100;
 }
+
 
 .animation {
   display: block;

@@ -22,6 +22,9 @@ $(document).scroll(function() {
       $('.navbar-inverse').css("background-color","rgba(238,238,238,0.8)");
       $('.navbar-inverse').css("border-bottom-color","transparent");
 
+      $('#v0').css("display","block");
+      $('.emblem').css("display","block");
+
     } else if(scroll_top > div_one_top && scroll_top < div_two_top) {
         //About
         $('#aboutLink').css("background-color","#009BCF");
@@ -36,6 +39,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("pointer-events","auto");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
+
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
 
     } else if( scroll_top > div_two_top && scroll_top < div_three_top) {
         //Our Goal
@@ -52,6 +58,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
+
     } else if( scroll_top > div_three_top && scroll_top < div_four_top) {
         //Manifesto
         $('#aboutLink').css("background-color","transparent");
@@ -65,6 +74,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("pointer-events","auto");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
+
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
 
     } else if( scroll_top > div_four_top && scroll_top < div_five_top) {
         //Projects
@@ -80,6 +92,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
+
     } else if( scroll_top > div_five_top && scroll_top < div_six_top) {
         //Sponsors
         $('#aboutLink').css("background-color","transparent");
@@ -93,6 +108,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("pointer-events","auto");
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
+
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
 
     } else if( scroll_top > div_six_top) {
         //Contact
@@ -108,6 +126,9 @@ $(document).scroll(function() {
         $('.navbar-inverse').css("background-color","#eeeeee");
         $('.navbar-inverse').css("border-bottom","3px solid #009BCF");
 
+        $('#v0').css("display","none");
+        $('.emblem').css("display","none");
+
     } else {
         //Home
         $('#aboutLink').css("background-color","transparent");
@@ -122,6 +143,9 @@ $(document).scroll(function() {
 
         //fade scroll indicator once scrolled
         $('.indicator').css("opacity","0");
+
+        $('#v0').css("display","block");
+        $('.emblem').css("display","block");
     }
 
 });
