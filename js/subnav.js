@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   if ($(window).width() <= 500) {
     $('video').css('display', 'none');
+    $('#v0').css('display', 'none');
     $('.rockettron').css('display', 'block');
 
     //remove timeline picture side padding so they are centred if mobile
