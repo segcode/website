@@ -2,11 +2,19 @@ $(document).ready(function() {
 
   if ($(window).width() <= 500) {
     $('video').css('display', 'none');
+    $('#v0').css('display', 'none');
     $('.rockettron').css('display', 'block');
 
     //remove timeline picture side padding so they are centred if mobile
     $(".timeline-picture").removeClass("timeline-picture-left timeline-picture-right");
-    
+
+    //remove loader and video
+    $('.loader').css('display', 'none');
+    $('.emblem').css('position', 'absolute');
+    $('.emblem').css('z-index', '1000');
+    $('.emblem').css('margin-top', '50px');
+    $('.home').css('margin-top', '-100px');
+
   } else {
     $('video').css('display', 'block');
     $('.rockettron').css('display', 'none');
