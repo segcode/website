@@ -5,6 +5,16 @@ body, html {
 /*
 Home Welcome
 */
+
+.home {
+  width: 100%;
+  margin-top: 1300px;
+  background-color: #eaeaea;
+  padding-top: 100px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .jumbotron {
   background-size: cover !important;
   height: 100vh;
@@ -13,8 +23,16 @@ Home Welcome
   justify-content: center;
 }
 
+.projecttron .container {
+  background-color: rgba(255,255,255,0.8);
+  width: 100%;
+}
+
 #v0 {
   width: 100%;
+  top:0;
+  position: fixed;
+  z-index: -2;
 }
 
 .rockettron {
@@ -28,7 +46,7 @@ Home Welcome
 }
 
 .projecttron {
-  background-image: url("../images/project_fiasco.jpg");
+  background-image: url("../images/project_fiasco_blur.jpg");
   background-position: center;
   height: 600px;
 }

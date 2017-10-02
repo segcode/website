@@ -11,14 +11,15 @@ body {
 }
 
 .emblem {
-  position: absolute;
+  position: fixed;
   margin-left: 50px;
-  margin-top:50px;
+  margin-top:-50px;
   padding-right: 100px;
+  z-index: -1;
 }
 
 .indicator {
-  position: absolute;
+  position: fixed;
   margin: auto;
   left:0;bottom:30px;right:0;
   opacity: 1;
