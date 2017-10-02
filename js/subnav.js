@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     //gives appearance of image and text fading
     setTimeout(function() {
-      $('.projecttron').css('background-image', 'url("images/project_fiasco.jpg")');
+      $('.projecttron').css('background-image', 'url("images/project_fiasco_blur.jpg")');
       $('#projectName').text('F.I.A.S.C.O (Futuristic Ingeniously Assembled Space and Cosmos Observer)');
       $('#projectInfo').text('During the year 2016/17, we have decided to build a weather balloon that could perform measurements, take pictures of the stratosphere and ' +
           'communicate the acquired information back to the ground station.');
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     //gives appearance of image and text fading
     setTimeout(function() {
-      $('.projecttron').css('background-image', 'url("images/segCar/main.jpg")');
+      $('.projecttron').css('background-image', 'url("images/segCar/main_blur.jpg")');
       $('#projectName').text('SEG Car (Remotely Controlled Vehicle)');
       $('#projectInfo').text('Our first project, that we worked on during the year of 2015/16, was remotely a controlled vehicle or as we like to call it - SEG car. ' +
           'The main goal of the project was to construct a vehicle that could move around, sense and determine the properties of a local environment.');
