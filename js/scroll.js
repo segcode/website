@@ -164,9 +164,23 @@ $(document).ready(function() {
 
 $(window).ready(function() {
 
-  var video = document.getElementById('v0');
-  video.addEventListener('loadeddata', function() {
-     $('.loader').delay(800).fadeOut("slow");
-  }, false);
+  var canPlay = false;
+  var v = document.createElement('video');
+  if(v.canPlayType && v.canPlayType('video/mp4').replace(/no/, '')) {
+      canPlay = true;
+  }
+
+  if (canPlay) {
+    var video = document.getElementById('v0');
+    video.pause();
+    video.addEventListener('loadeddata', function() {
+       video.play();
+       $('.loader').delay(800).fadeOut("slow");
+    }, false);
+  } else {
+    $('.loader').remove();
+    $('.home').css('margin-top', '450px');
+  }
+
 
 });
