@@ -1,1 +1,1 @@
-St Andrews Egineering society's main website. 
+St Andrews Engineering society's (SEG) main website. 
